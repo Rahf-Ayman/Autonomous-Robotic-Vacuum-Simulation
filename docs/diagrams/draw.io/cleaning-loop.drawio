@@ -1,0 +1,138 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.0.3 Chrome/140.0.7339.249 Electron/38.7.0 Safari/537.36" version="29.0.3">
+  <diagram id="s3lZsJhEZGF_PRqwL0lF" name="Page-1">
+    <mxGraphModel dx="1955" dy="850" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="Cleaning loop (five navigation priorities per time step)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;fontSize=14;fontStyle=1;" parent="1" vertex="1">
+          <mxGeometry x="-9" width="820" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="n_start" value="" style="ellipse;fillColor=#000000;strokeColor=#000000;aspect=fixed;" parent="1" vertex="1">
+          <mxGeometry x="389" y="38" width="22" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl0" value="P0" style="text;html=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=10;fontColor=#666666;" parent="1" vertex="1">
+          <mxGeometry x="148" y="90" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="d0" value="All phase waypoints&#xa;complete?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="248" y="82" width="304" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="a0" value="Set state ← RETURNING&#xa;(phase complete)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="630" y="103" width="230" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="e_s0" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="n_start" target="d0" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_0j" value="Yes" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;" parent="1" source="d0" target="a0" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl1" value="P1" style="text;html=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=10;fontColor=#666666;" parent="1" vertex="1">
+          <mxGeometry x="148" y="200" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="d1" value="Battery ≤ 20%&#xa;OR 20-minute limit reached?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="248" y="196" width="304" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" value="Set state ← RETURNING&#xa;(low battery / time limit)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="630" y="217" width="230" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="e_0n" value="No" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;" parent="1" source="d0" target="d1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_1j" value="Yes" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;" parent="1" source="d1" target="a1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl2" value="P2" style="text;html=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=10;fontColor=#666666;" parent="1" vertex="1">
+          <mxGeometry x="148" y="318" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="d2" value="MOPPING mode AND&#xa;sensor / height detects rug?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="248" y="310" width="304" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" value="Reverse away from carpet,&#xa;then resume the waypoint route" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="630" y="331" width="230" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="e_1n" value="No" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;" parent="1" source="d1" target="d2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_2j" value="Yes" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;" parent="1" source="d2" target="a2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="note2" value="⚠ Active only in MOPPING mode" style="text;html=1;strokeColor=none;fillColor=#fffacd;align=left;fontSize=9;fontStyle=2;" parent="1" vertex="1">
+          <mxGeometry x="630" y="382" width="230" height="18" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl3" value="P3" style="text;html=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=10;fontColor=#666666;" parent="1" vertex="1">
+          <mxGeometry x="148" y="432" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="d3" value="LiDAR obstacle detected?&#xa;(front / front-side / flank &lt; threshold)" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=center;" parent="1" vertex="1">
+          <mxGeometry x="248" y="424" width="304" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" value="Obstacle avoidance:&#xa;adjust wheel speeds from LiDAR sectors" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;" parent="1" vertex="1">
+          <mxGeometry x="630" y="445" width="230" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="e_2n" value="No" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;" parent="1" source="d2" target="d3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_3j" value="Yes" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;" parent="1" source="d3" target="a3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lbl4" value="P4" style="text;html=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=10;fontColor=#666666;" parent="1" vertex="1">
+          <mxGeometry x="148" y="558" width="30" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" value="BOUSTROPHEDON GPS NAVIGATION&#xa;━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━&#xa;① Select the active coverage waypoint&#xa;② Blend the next heading near the target&#xa;③ Follow heading with GPS / compass&#xa;④ Advance at 0.22 m or after 10 s stall&#xa;⑤ Set left / right wheel speeds" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=10;align=left;spacingLeft=8;" parent="1" vertex="1">
+          <mxGeometry x="178" y="550" width="444" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="e_3n" value="No" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;" parent="1" source="d3" target="a4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="end_lbl" value="End time step" style="text;html=1;strokeColor=none;fillColor=none;fontSize=9;fontStyle=2;" parent="1" vertex="1">
+          <mxGeometry x="423" y="710" width="100" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="e_4end" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;" parent="1" source="a4" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="401" y="698" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_a0end" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" parent="1" source="a0" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1070" y="149" />
+              <mxPoint x="1070" y="712" />
+            </Array>
+            <mxPoint x="415" y="712" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_a1end" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" parent="1" source="a1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1040" y="263" />
+              <mxPoint x="1040" y="712" />
+            </Array>
+            <mxPoint x="415" y="712" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_a2end" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" parent="1" source="a2" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="990" y="377" />
+              <mxPoint x="990" y="712" />
+            </Array>
+            <mxPoint x="415" y="712" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e_a3end" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;entryX=1;entryY=0.5;" parent="1" source="a3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="960" y="491" />
+              <mxPoint x="960" y="712" />
+            </Array>
+            <mxPoint x="415" y="712" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="leg_box" value="Coverage and planning:&#xa;• Carpet grid cell: 0.25 m&#xa;• Waypoint radius: 0.22 m&#xa;• Strip spacing: 0.35 m&#xa;• LiDAR front / flank: 0.25 / 0.20 m&#xa;• Waypoint frustration: 10 s&#xa;&#xa;Mopping west-side carpet buffer: 0.35 m" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=9;align=left;spacingLeft=6;" parent="1" vertex="1">
+          <mxGeometry x="660" y="555" width="280" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="RRkceqzorcX-giN2m9yp-1" value="" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" parent="1" vertex="1">
+          <mxGeometry x="385" y="698" width="30" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

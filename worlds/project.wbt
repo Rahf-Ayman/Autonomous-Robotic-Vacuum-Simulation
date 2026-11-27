@@ -1,0 +1,1072 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/chairs/protos/OfficeChair.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/kitchen/components/protos/Sink.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/kitchen/components/protos/Worktop.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/kitchen/oven/protos/Oven.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/kitchen/components/protos/HotPlate.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/tables/protos/Desk.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/computers/protos/Monitor.proto"
+
+WorldInfo {
+  info [
+    "Simple 6 m by 6 m apartment with a vacuum-and-mop mission."
+  ]
+  title "Roomba Digital Twin - Minimal Studio Apartment"
+}
+Viewpoint {
+  orientation 0.436821501893279 -0.136407339092261 -0.8891456648522046 3.6832532689135786
+  position 7.9414822976052015 -5.492832747318096 12.114607784917476
+}
+TexturedBackground {
+  luminosity 0.9
+  skybox FALSE
+  skyColor [
+    0.72 0.79 0.84
+  ]
+}
+TexturedBackgroundLight {
+}
+Solid {
+  translation 0 0 -0.12
+  children [
+    Shape {
+      appearance DEF FOUNDATION PBRAppearance {
+        baseColor 0.38 0.31 0.25
+        roughness 0.9
+      }
+      geometry Box {
+        size 6.4 6.4 0.2
+      }
+    }
+  ]
+  name "apartment_foundation"
+  boundingObject Box {
+    size 6.4 6.4 0.2
+  }
+  locked TRUE
+}
+Solid {
+  translation 0 0 -0.05
+  children [
+    Shape {
+      appearance DEF WOOD_FLOOR PBRAppearance {
+        baseColor 0.55 0.38 0.24
+        roughness 0.78
+      }
+      geometry Box {
+        size 6 6 0.1
+      }
+    }
+    Pose {
+      translation -2.75 0 0.051
+      children [
+        DEF FLOOR_SEAM_X Shape {
+          appearance PBRAppearance {
+            baseColor 0.32 0.21 0.13
+            roughness 0.9
+          }
+          geometry Box {
+            size 0.008 5.95 0.002
+          }
+        }
+      ]
+    }
+    Pose {
+      translation -2.25 0 0.051
+      children [
+        USE FLOOR_SEAM_X
+      ]
+    }
+    Pose {
+      translation -1.75 0 0.051
+      children [
+        USE FLOOR_SEAM_X
+      ]
+    }
+    Pose {
+      translation -1.25 0 0.051
+      children [
+        USE FLOOR_SEAM_X
+      ]
+    }
+    Pose {
+      translation -0.75 0 0.051
+      children [
+        USE FLOOR_SEAM_X
+      ]
+    }
+    Pose {
+      translation -0.25 0 0.051
+      children [
+        USE FLOOR_SEAM_X
+      ]
+    }
+    Pose {
+      translation 0.25 0 0.051
+      children [
+        USE FLOOR_SEAM_X
+      ]
+    }
+    Pose {
+      translation 0.75 0 0.051
+      children [
+        USE FLOOR_SEAM_X
+      ]
+    }
+    Pose {
+      translation 1.25 0 0.051
+      children [
+        USE FLOOR_SEAM_X
+      ]
+    }
+    Pose {
+      translation 1.75 0 0.051
+      children [
+        USE FLOOR_SEAM_X
+      ]
+    }
+    Pose {
+      translation 2.25 0 0.051
+      children [
+        USE FLOOR_SEAM_X
+      ]
+    }
+    Pose {
+      translation 2.75 0 0.051
+      children [
+        USE FLOOR_SEAM_X
+      ]
+    }
+    Pose {
+      translation -2.5 -1.25 0.051
+      children [
+        DEF FLOOR_JOINT Shape {
+          appearance PBRAppearance {
+            baseColor 0.32 0.21 0.13
+            roughness 0.9
+          }
+          geometry Box {
+            size 0.5 0.008 0.002
+          }
+        }
+      ]
+    }
+    Pose {
+      translation -1.5 -1.25 0.051
+      children [
+        USE FLOOR_JOINT
+      ]
+    }
+    Pose {
+      translation -0.5 -1.25 0.051
+      children [
+        USE FLOOR_JOINT
+      ]
+    }
+    Pose {
+      translation 0.5 -1.25 0.051
+      children [
+        USE FLOOR_JOINT
+      ]
+    }
+    Pose {
+      translation 1.5 -1.25 0.051
+      children [
+        USE FLOOR_JOINT
+      ]
+    }
+    Pose {
+      translation 2.5 -1.25 0.051
+      children [
+        USE FLOOR_JOINT
+      ]
+    }
+    Pose {
+      translation -2.5 1.25 0.051
+      children [
+        USE FLOOR_JOINT
+      ]
+    }
+    Pose {
+      translation -1.5 1.25 0.051
+      children [
+        USE FLOOR_JOINT
+      ]
+    }
+    Pose {
+      translation -0.5 1.25 0.051
+      children [
+        USE FLOOR_JOINT
+      ]
+    }
+    Pose {
+      translation 0.5 1.25 0.051
+      children [
+        USE FLOOR_JOINT
+      ]
+    }
+    Pose {
+      translation 1.5 1.25 0.051
+      children [
+        USE FLOOR_JOINT
+      ]
+    }
+    Pose {
+      translation 2.5 1.25 0.051
+      children [
+        USE FLOOR_JOINT
+      ]
+    }
+  ]
+  name "wood_floor"
+  boundingObject Box {
+    size 6 6 0.1
+  }
+  locked TRUE
+}
+Monitor {
+  translation -2.52 -0.15 0.71
+}
+Desk {
+  translation -2.44 -0.21 0
+}
+HotPlate {
+  translation -1.36 2.81 0.71
+  rotation 0 0 1 -1.5707953071795862
+}
+Oven {
+  translation -0.02 2.65 0
+  rotation 0 0 1 -1.5707953071795862
+}
+Solid {
+  translation 0 2.95 0.65
+  children [
+    Shape {
+      appearance DEF WARM_WALL PBRAppearance {
+        baseColor 0.86 0.84 0.79
+        roughness 0.9
+      }
+      geometry Box {
+        size 6 0.1 1.3
+      }
+    }
+    Pose {
+      translation 0 -0.065 0.04
+      children [
+        Shape {
+          appearance DEF WHITE_TRIM PBRAppearance {
+            baseColor 0.94 0.93 0.89
+            roughness 0.7
+          }
+          geometry Box {
+            size 6 0.04 0.08
+          }
+        }
+      ]
+    }
+  ]
+  name "wall_north"
+  boundingObject Box {
+    size 6 0.1 1.3
+  }
+  locked TRUE
+}
+Worktop {
+  translation -1.28 2.73 0.7
+  name "worktop(1)"
+}
+Solid {
+  translation 0 -2.95 0.65
+  children [
+    Shape {
+      appearance DEF WARM_WALL PBRAppearance {
+        baseColor 0.86 0.84 0.79
+        roughness 0.9
+      }
+      geometry Box {
+        size 6 0.1 1.3
+      }
+    }
+    Pose {
+      translation 0 0.065 0.04
+      children [
+        Shape {
+          appearance DEF WHITE_TRIM PBRAppearance {
+            baseColor 0.94 0.93 0.89
+            roughness 0.7
+          }
+          geometry Box {
+            size 6 0.04 0.08
+          }
+        }
+      ]
+    }
+  ]
+  name "wall_south"
+  boundingObject Box {
+    size 6 0.1 1.3
+  }
+  locked TRUE
+}
+Solid {
+  translation 2.95 0 0.65
+  children [
+    Shape {
+      appearance DEF WARM_WALL PBRAppearance {
+        baseColor 0.86 0.84 0.79
+        roughness 0.9
+      }
+      geometry Box {
+        size 0.1 6 1.3
+      }
+    }
+    Pose {
+      translation -0.065 0 0.04
+      children [
+        Shape {
+          appearance DEF WHITE_TRIM PBRAppearance {
+            baseColor 0.94 0.93 0.89
+            roughness 0.7
+          }
+          geometry Box {
+            size 0.04 6 0.08
+          }
+        }
+      ]
+    }
+  ]
+  name "wall_east"
+  boundingObject Box {
+    size 0.1 6 1.3
+  }
+  locked TRUE
+}
+Solid {
+  translation -2.95 0 0.65
+  children [
+    Shape {
+      appearance DEF WARM_WALL PBRAppearance {
+        baseColor 0.86 0.84 0.79
+        roughness 0.9
+      }
+      geometry Box {
+        size 0.1 6 1.3
+      }
+    }
+    Pose {
+      translation 0.065 0 0.04
+      children [
+        Shape {
+          appearance DEF WHITE_TRIM PBRAppearance {
+            baseColor 0.94 0.93 0.89
+            roughness 0.7
+          }
+          geometry Box {
+            size 0.04 6 0.08
+          }
+        }
+      ]
+    }
+  ]
+  name "wall_west"
+  boundingObject Box {
+    size 0.1 6 1.3
+  }
+  locked TRUE
+}
+Solid {
+  translation 0.94 0.21 0
+  rotation 0 0 1 -1.5707953071795862
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.262745 0.313726 0.317647
+        roughness 1
+      }
+      geometry Box {
+        size 2.4 1.6 0.01
+      }
+    }
+  ]
+  name "carpet"
+  boundingObject Box {
+    size 2.4 1.6 0.01
+  }
+}
+Charger {
+  translation 2 2.85 0
+  children [
+    Pose {
+      translation 0 0 0.025
+      children [
+        Shape {
+          appearance DEF DARK_WOOD PBRAppearance {
+            baseColor 0.24 0.16 0.11
+            roughness 0.7
+            emissiveColor 0 1 0
+          }
+          geometry Box {
+            size 0.8 0.62 0.05
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0 0.18 0.38
+      children [
+        Shape {
+          appearance DEF WHITE_TRIM PBRAppearance {
+            baseColor 0.94 0.93 0.89
+            roughness 0.7
+          }
+          geometry Box {
+            size 0.78 0.16 0.76
+          }
+        }
+      ]
+    }
+    Pose {
+      translation -0.34 0.08 0.36
+      children [
+        Shape {
+          appearance DEF OAK PBRAppearance {
+            baseColor 0.62 0.45 0.29
+            roughness 0.72
+          }
+          geometry Box {
+            size 0.035 0.05 0.62
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0.34 0.08 0.36
+      children [
+        Shape {
+          appearance DEF OAK PBRAppearance {
+            baseColor 0.62 0.45 0.29
+            roughness 0.72
+          }
+          geometry Box {
+            size 0.035 0.05 0.62
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0 0.085 0.68
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.15 0.45 0.36
+            roughness 0.3
+            emissiveColor 0.05 0.35 0.2
+          }
+          geometry Box {
+            size 0.42 0.02 0.045
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0 0 0.075
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.08 0.08 0.08
+            roughness 0.5
+          }
+          geometry Box {
+            size 0.25 0.15 0.15
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0 -0.2 0.005
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.16 0.16 0.15
+            roughness 0.8
+          }
+          geometry Box {
+            size 0.45 0.4 0.01
+          }
+        }
+      ]
+    }
+    Pose {
+      translation -0.19 -0.2 0.03
+      rotation 0 0 1 -0.15
+      children [
+        Shape {
+          appearance DEF METAL PBRAppearance {
+            baseColor 0.32 0.34 0.34
+            roughness 0.35
+            metalness 0.65
+          }
+          geometry Box {
+            size 0.02 0.35 0.06
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0.19 -0.2 0.03
+      rotation 0 0 1 0.15
+      children [
+        Shape {
+          appearance DEF METAL PBRAppearance {
+            baseColor 0.32 0.34 0.34
+            roughness 0.35
+            metalness 0.65
+          }
+          geometry Box {
+            size 0.02 0.35 0.06
+          }
+        }
+      ]
+    }
+  ]
+  name "home_base"
+  boundingObject Group {
+    children [
+      Pose {
+        translation 0 0 0.075
+        children [
+          Box {
+            size 0.25 0.15 0.15
+          }
+        ]
+      }
+      Pose {
+        translation -0.19 -0.2 0.03
+        rotation 0 0 1 -0.15
+        children [
+          Box {
+            size 0.02 0.35 0.06
+          }
+        ]
+      }
+      Pose {
+        translation 0.19 -0.2 0.03
+        rotation 0 0 1 0.15
+        children [
+          Box {
+            size 0.02 0.35 0.06
+          }
+        ]
+      }
+    ]
+  }
+  battery [
+    10000000, 10000000, 1000
+  ]
+  radius 0.4
+}
+Robot {
+  translation -1.1722545848484167 0.6912213904460128 0.07353718168627203
+  rotation -0.0052366462830444535 0.4874125866004785 -0.8731560845342241 -0.0244700350363507
+  children [
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 1070.9123522171485
+        axis 0 1 0
+        anchor 0 0.115 -0.04
+      }
+      device [
+        RotationalMotor {
+          name "motor_left"
+        }
+      ]
+      endPoint Solid {
+        translation 0 0.115 -0.04
+        rotation 0 1 0 2.770849996618808
+        children [
+          DEF WHEEL_SHAPE Pose {
+            rotation 1 0 0 1.570799
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  baseColor 0.2 0.2 0.2
+                  roughness 1
+                }
+                geometry Cylinder {
+                  height 0.02
+                  radius 0.035
+                }
+              }
+            ]
+          }
+        ]
+        name "left_wheel"
+        boundingObject USE WHEEL_SHAPE
+        physics Physics {
+        }
+        linearVelocity 0.12077676176765909 0.0025816520223218517 5.382751966426863e-09
+        angularVelocity -0.07377380196762373 3.4507763229833315 -0.0004909840680762592
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position 1087.430912902951
+        axis 0 1 0
+        anchor 0 -0.115 -0.04
+      }
+      device [
+        RotationalMotor {
+          name "motor_right"
+        }
+      ]
+      endPoint Solid {
+        translation 0 -0.115 -0.04
+        rotation 0 -0.9999999999999999 0 5.843330546297125
+        children [
+          USE WHEEL_SHAPE
+        ]
+        name "right_wheel"
+        boundingObject USE WHEEL_SHAPE
+        physics Physics {
+        }
+        linearVelocity 0.12066633151613726 0.0025792919554721216 -3.2501524577129844e-09
+        angularVelocity -0.07370636647459629 3.4476224579958004 -0.0004909668948267417
+      }
+    }
+    Solid {
+      translation 0.12 0 -0.06
+      children [
+        DEF CASTER_SHAPE Shape {
+          appearance PBRAppearance {
+            baseColor 0.8 0.8 0.8
+          }
+          geometry Sphere {
+            radius 0.015
+          }
+        }
+      ]
+      name "caster_wheel"
+      boundingObject USE CASTER_SHAPE
+      physics Physics {
+      }
+    }
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.1 0.1 0.1
+      }
+      geometry Cylinder {
+        height 0.087
+        radius 0.17
+      }
+    }
+    Lidar {
+      translation 0.15 0 0
+      name "clearview_lidar"
+      horizontalResolution 256
+      fieldOfView 3.14159
+      numberOfLayers 1
+    }
+    TouchSensor {
+      translation 0.12 0 0
+      name "bumper"
+      boundingObject Box {
+        size 0.08 0.26 0.08
+      }
+    }
+    DistanceSensor {
+      translation 0 -0.16 0
+      rotation 0 0 1 -1.570796
+      name "wall_sensor"
+      lookupTable [
+        0 1000 0
+        0.2 0 0
+      ]
+    }
+    DistanceSensor {
+      translation 0.16 0 -0.04
+      rotation 0 1 0 1.570796
+      name "carpet_sensor"
+      lookupTable [
+        0 1000 0
+        0.1 0 0
+      ]
+    }
+    DistanceSensor {
+      translation 0.12 0.08 -0.05
+      rotation 0 1 0 1.570796
+      name "cliff_sensor_left"
+      lookupTable [
+        0 1000 0
+        0.2 0 0
+      ]
+      type "infra-red"
+    }
+    DistanceSensor {
+      translation 0.12 -0.08 -0.05
+      rotation 0 1 0 1.570796
+      name "cliff_sensor_right"
+      lookupTable [
+        0 1000 0
+        0.2 0 0
+      ]
+      type "infra-red"
+    }
+    DistanceSensor {
+      translation 0.03 0.15 -0.05
+      rotation 0 1 0 1.570796
+      name "cliff_sensor_front_left"
+      lookupTable [
+        0 1000 0
+        0.2 0 0
+      ]
+      type "infra-red"
+    }
+    DistanceSensor {
+      translation 0.03 -0.15 -0.05
+      rotation 0 1 0 1.570796
+      name "cliff_sensor_front_right"
+      lookupTable [
+        0 1000 0
+        0.2 0 0
+      ]
+      type "infra-red"
+    }
+    GPS {
+    }
+    Compass {
+    }
+    LED {
+      translation 0.05 0 0.044
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.1 0.3 0.1
+            roughness 0.3
+            metalness 0
+            emissiveColor 0 1 0
+          }
+          geometry Sphere {
+            radius 0.008
+          }
+        }
+      ]
+      name "status_led"
+      color [
+        0 1 0
+      ]
+    }
+    LED {
+      translation -0.05 0 0.044
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.3 0.15 0
+            roughness 0.3
+            metalness 0
+          }
+          geometry Sphere {
+            radius 0.008
+          }
+        }
+      ]
+      name "battery_led"
+      color [
+        1 0.5 0
+      ]
+    }
+  ]
+  name "Roomba® 205 DustCompactor™ Combo Robot"
+  boundingObject Cylinder {
+    height 0.087
+    radius 0.17
+  }
+  physics Physics {
+    density -1
+    mass 3.5
+    centerOfMass [
+      0 0 -0.05
+    ]
+  }
+  controller "roomba_controller"
+  battery [
+    4600.346551395917, 10000, 1000
+  ]
+  linearVelocity 0.12072155247315262 0.0025801826357360258 1.0608011453629227e-09
+  angularVelocity 3.732454078256867e-08 4.533940237738581e-08 -0.00048086857363152636
+}
+Solid {
+  translation -0.55 -2.57 0
+  rotation 0 0 1 3.14159
+  children [
+    Pose {
+      translation 0 0 0.17
+      children [
+        Shape {
+          appearance DEF SOFA_FABRIC PBRAppearance {
+            baseColor 0.34 0.43 0.42
+            roughness 1
+          }
+          geometry Box {
+            size 2.05 0.58 0.34
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0 0.235 0.5
+      children [
+        Shape {
+          appearance DEF SOFA_FABRIC PBRAppearance {
+            baseColor 0.34 0.43 0.42
+            roughness 1
+          }
+          geometry Box {
+            size 2.05 0.12 0.58
+          }
+        }
+      ]
+    }
+    Pose {
+      translation -0.965 0 0.38
+      children [
+        DEF SOFA_ARM Shape {
+          appearance PBRAppearance {
+            baseColor 0.34 0.43 0.42
+            roughness 1
+          }
+          geometry Box {
+            size 0.12 0.58 0.48
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0.965 0 0.38
+      children [
+        USE SOFA_ARM
+      ]
+    }
+    Pose {
+      translation -0.44 -0.015 0.39
+      children [
+        DEF SOFA_SEAT Shape {
+          appearance PBRAppearance {
+            baseColor 0.45 0.54 0.52
+            roughness 1
+          }
+          geometry Box {
+            size 0.82 0.43 0.13
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0.44 -0.015 0.39
+      children [
+        USE SOFA_SEAT
+      ]
+    }
+    Pose {
+      translation -0.64 0.14 0.61
+      rotation 1 0 0 -0.18
+      children [
+        Shape {
+          appearance DEF RUG_STRIPE PBRAppearance {
+            baseColor 0.84 0.74 0.58
+            roughness 1
+          }
+          geometry Box {
+            size 0.38 0.12 0.38
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0.64 0.14 0.61
+      rotation 1 0 0 -0.18
+      children [
+        Shape {
+          appearance DEF BLANKET PBRAppearance {
+            baseColor 0.55 0.63 0.62
+            roughness 1
+          }
+          geometry Box {
+            size 0.38 0.12 0.38
+          }
+        }
+      ]
+    }
+  ]
+  name "apartment_sofa"
+  boundingObject Box {
+    size 2.05 0.62 0.82
+  }
+}
+Solid {
+  translation 2.425 0.2 0
+  children [
+    Pose {
+      translation 0 0 0.18
+      children [
+        Shape {
+          appearance DEF OAK PBRAppearance {
+            baseColor 0.62 0.45 0.29
+            roughness 0.72
+          }
+          geometry Box {
+            size 0.95 1.9 0.36
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0 0 0.42
+      children [
+        Shape {
+          appearance DEF LINEN PBRAppearance {
+            baseColor 0.9 0.88 0.82
+            roughness 1
+          }
+          geometry Box {
+            size 0.91 1.86 0.16
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0 -0.33 0.515
+      children [
+        Shape {
+          appearance DEF BLANKET PBRAppearance {
+            baseColor 0.55 0.63 0.62
+            roughness 1
+          }
+          geometry Box {
+            size 0.92 1.15 0.045
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0 0.93 0.67
+      children [
+        Shape {
+          appearance DEF DARK_WOOD PBRAppearance {
+            baseColor 0.24 0.16 0.11
+            roughness 0.7
+          }
+          geometry Box {
+            size 1 0.08 0.9
+          }
+        }
+      ]
+    }
+    Pose {
+      translation -0.23 0.61 0.56
+      children [
+        DEF BED_PILLOW Shape {
+          appearance PBRAppearance {
+            baseColor 0.9 0.88 0.82
+            roughness 1
+          }
+          geometry Box {
+            size 0.38 0.42 0.11
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0.23 0.61 0.56
+      children [
+        USE BED_PILLOW
+      ]
+    }
+  ]
+  name "apartment_bed"
+  boundingObject Box {
+    size 1 1.94 1.12
+  }
+}
+Sink {
+  translation -0.72 2.76 0.720001
+  rotation 2.6535699999813148e-06 -2.6535699999813148e-06 0.9999999999929585 -1.5707953071795862
+}
+Worktop {
+  translation -0.15 2.71 0.71
+}
+OfficeChair {
+  hidden position_0_0 -2.091998459530231e-05
+  hidden rotation_1 0 0 -1 2.0919977901975146e-05
+  translation -1.7920400019115692 -0.27552799997731214 -0.0014144559532308365
+  rotation 0.0007022913579868901 -5.119782461493941e-06 0.9999997533802879 3.1415899998391255
+}
+Solid {
+  translation 1.08 -2.61 0
+  children [
+    Pose {
+      translation 0 0 0.11
+      children [
+        Shape {
+          appearance DEF POT PBRAppearance {
+            baseColor 0.62 0.36 0.24
+            roughness 0.85
+          }
+          geometry Cylinder {
+            height 0.22
+            radius 0.14
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0 0 0.34
+      children [
+        Shape {
+          appearance DEF LEAF PBRAppearance {
+            baseColor 0.22 0.38 0.24
+            roughness 0.9
+          }
+          geometry Sphere {
+            radius 0.13
+          }
+        }
+      ]
+    }
+    Pose {
+      translation -0.1 0.02 0.48
+      children [
+        Shape {
+          appearance DEF LEAF PBRAppearance {
+            baseColor 0.22 0.38 0.24
+            roughness 0.9
+          }
+          geometry Sphere {
+            radius 0.11
+          }
+        }
+      ]
+    }
+    Pose {
+      translation 0.08 -0.03 0.52
+      children [
+        Shape {
+          appearance DEF LEAF PBRAppearance {
+            baseColor 0.22 0.38 0.24
+            roughness 0.9
+          }
+          geometry Sphere {
+            radius 0.1
+          }
+        }
+      ]
+    }
+  ]
+  name "apartment_plant"
+  boundingObject Cylinder {
+    height 0.64
+    radius 0.2
+  }
+}
