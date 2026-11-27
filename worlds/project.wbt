@@ -564,17 +564,17 @@ Charger {
     ]
   }
   battery [
-    10000000, 10000000, 1000
+    9517504, 10000000, 1000
   ]
   radius 0.4
 }
 Robot {
-  translation -1.1722545848484167 0.6912213904460128 0.07353718168627203
-  rotation -0.0052366462830444535 0.4874125866004785 -0.8731560845342241 -0.0244700350363507
+  translation 1.9996908156769642 2.6000989960638416 0.07293744997202573
+  rotation -0.08682575803802496 0.08707259175586983 -0.9924110295165194 -1.575567985777405
   children [
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 1070.9123522171485
+        position 6214.482753200138
         axis 0 1 0
         anchor 0 0.115 -0.04
       }
@@ -585,7 +585,7 @@ Robot {
       ]
       endPoint Solid {
         translation 0 0.115 -0.04
-        rotation 0 1 0 2.770849996618808
+        rotation 0 -1 0 5.870700907652435
         children [
           DEF WHEEL_SHAPE Pose {
             rotation 1 0 0 1.570799
@@ -607,13 +607,13 @@ Robot {
         boundingObject USE WHEEL_SHAPE
         physics Physics {
         }
-        linearVelocity 0.12077676176765909 0.0025816520223218517 5.382751966426863e-09
-        angularVelocity -0.07377380196762373 3.4507763229833315 -0.0004909840680762592
+        linearVelocity 1.3410624952833532e-09 -4.802722462425158e-07 6.562155240710543e-10
+        angularVelocity -1.7550597861942394e-05 4.989744116874216e-08 6.173715220304504e-09
       }
     }
     HingeJoint {
       jointParameters HingeJointParameters {
-        position 1087.430912902951
+        position 6181.6248236281435
         axis 0 1 0
         anchor 0 -0.115 -0.04
       }
@@ -624,7 +624,7 @@ Robot {
       ]
       endPoint Solid {
         translation 0 -0.115 -0.04
-        rotation 0 -0.9999999999999999 0 5.843330546297125
+        rotation 0 -1 0 1.029518636569562
         children [
           USE WHEEL_SHAPE
         ]
@@ -632,8 +632,8 @@ Robot {
         boundingObject USE WHEEL_SHAPE
         physics Physics {
         }
-        linearVelocity 0.12066633151613726 0.0025792919554721216 -3.2501524577129844e-09
-        angularVelocity -0.07370636647459629 3.4476224579958004 -0.0004909668948267417
+        linearVelocity 1.3450947757787376e-09 -4.788548635373709e-07 6.685717592302201e-10
+        angularVelocity -1.7550696867024985e-05 4.989760975891161e-08 6.1736702964307615e-09
       }
     }
     Solid {
@@ -766,6 +766,7 @@ Robot {
             baseColor 0.3 0.15 0
             roughness 0.3
             metalness 0
+            emissiveColor 1 0.5 0
           }
           geometry Sphere {
             radius 0.008
@@ -778,7 +779,7 @@ Robot {
       ]
     }
   ]
-  name "Roomba® 205 DustCompactor™ Combo Robot"
+  name "Roomba 205 DustCompactor Combo Robot"
   boundingObject Cylinder {
     height 0.087
     radius 0.17
@@ -793,10 +794,10 @@ Robot {
   controller "roomba_controller"
   supervisor TRUE
   battery [
-    4600.346551395917, 10000, 1000
+    9999.675099628472, 10000, 1000
   ]
-  linearVelocity 0.12072155247315262 0.0025801826357360258 1.0608011453629227e-09
-  angularVelocity 3.732454078256867e-08 4.533940237738581e-08 -0.00048086857363152636
+  linearVelocity 8.380518887465144e-10 -6.522790446324147e-07 -3.8437604265900976e-08
+  angularVelocity -1.7627215342966877e-05 5.0115511822541555e-08 6.17376403049384e-09
 }
 DEF DUST_FIELD Group {
   children [
@@ -1007,10 +1008,10 @@ Worktop {
   translation -0.15 2.71 0.71
 }
 OfficeChair {
-  hidden position_0_0 -2.091998459530231e-05
-  hidden rotation_1 0 0 -1 2.0919977901975146e-05
-  translation -1.7920400019115692 -0.27552799997731214 -0.0014144559532308365
-  rotation 0.0007022913579868901 -5.119782461493941e-06 0.9999997533802879 3.1415899998391255
+  hidden position_0_0 0.0011625357475661218
+  hidden rotation_1 0 0 1 0.0011625357477194555
+  translation -1.7920404200665105 -0.2755867785612194 -0.0014381551654833735
+  rotation 0.000725445227840803 6.917194517215898e-05 0.9999997344721965 3.141525143223612
 }
 Solid {
   translation 1.08 -2.61 0
