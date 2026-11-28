@@ -7,7 +7,10 @@ carpet-aware cleaning, battery management, and autonomous docking.
 import math
 import random
 
-from controller import Robot
+try:
+    from controller import Supervisor
+except ImportError:
+    from controller import Robot as Supervisor
 
 from config import (
     ALIGNING_THRESHOLD,
@@ -29,6 +32,7 @@ from config import (
     angle_error,
     clamp,
 )
+from cleaning_manager import CleaningManager
 from hardware import HardwareInterface
 from navigation import NavigationPlanner
 from pid import PIDController
@@ -92,6 +96,8 @@ class RoombaController:
         self.prev_cycle_time = 0.0
 
         self.hw.set_leds("UNDOCKING")
+        self.cleaning_manager = CleaningManager(robot)
+        self.cleaning_manager.init_environment()
         print(
             f"[SYSTEM] Controller v5.16 | {BATTERY_MAX:.0f} J battery | "
             f"return at {BATTERY_LOW_PCT * 100:.0f}% | 20 min per phase"
@@ -247,6 +253,7 @@ class RoombaController:
                     "[MISSION] Complete! VACUUMING + MOPPING done "
                     f"| t={current_time:.0f}s | battery: {battery_percentage}%"
                 )
+                self.cleaning_manager.print_summary()
                 self.last_charge_time = current_time
                 self.charging_start_time = 0.0
                 self.state = "FINISHED"
@@ -320,10 +327,12 @@ class RoombaController:
                 else f"low battery ({BATTERY_LOW_PCT * 100:.0f}%)"
             )
             print(f"[STATE CHANGE] {self.state} → RETURNING ({reason})")
+            self.cleaning_manager.print_summary()
             self._transition_to_returning()
             return
 
         if self.nav.step_cleaning(t, allow_carpet):
+            self.cleaning_manager.print_summary()
             self._transition_to_returning()
 
     def _execute_state_machine(self, t):
@@ -545,12 +554,13 @@ class RoombaController:
 
         self._check_emergencies(t)
         self._check_stuck(t)
+        self.cleaning_manager.step(self.hw.pos[0], self.hw.pos[1], self.state)
         self._execute_state_machine(t)
 
 
 def main():
     """Run the controller in the active Webots simulation."""
-    robot = Robot()
+    robot = Supervisor()
     timestep = int(robot.getBasicTimeStep())
     controller = RoombaController(robot, timestep)
 

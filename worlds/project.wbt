@@ -792,11 +792,20 @@ Robot {
     ]
   }
   controller "roomba_controller"
+  supervisor TRUE
   battery [
     9999.675099628472, 10000, 1000
   ]
   linearVelocity 8.380518887465144e-10 -6.522790446324147e-07 -3.8437604265900976e-08
   angularVelocity -1.7627215342966877e-05 5.0115511822541555e-08 6.17376403049384e-09
+}
+DEF DUST_FIELD Group {
+  children [
+  ]
+}
+DEF JUICE_FIELD Group {
+  children [
+  ]
 }
 Solid {
   translation -0.55 -2.57 0
